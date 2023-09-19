@@ -1,14 +1,15 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'CS 1635 Example',
       home: MyHomePage(),
     );
@@ -16,6 +17,8 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key});
+
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
@@ -26,10 +29,10 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('CS 1635'),
+        title: const Text('CS 1635'),
       ),
       body: ListView(children: <Widget>[
-        Container(
+        SizedBox(
           width: 400,
           height: 400,
           child: CustomPaint(
@@ -47,17 +50,17 @@ class OpenPainter extends CustomPainter {
     var paint1 = Paint()
       ..color = Colors.grey
       ..style = PaintingStyle.fill;
-    canvas.drawCircle(Offset(200, 200), 100, paint1);
+    canvas.drawCircle(const Offset(200, 200), 100, paint1);
 
     var paint2 = Paint()
       ..color = Colors.greenAccent
       ..strokeWidth = 20;
     //canvas.drawLine(Offset(0,0), Offset(200,200), paint2);
-    canvas.drawCircle(Offset(200, 200), 80, paint2);
+    canvas.drawCircle(const Offset(200, 200), 80, paint2);
 
-    canvas.drawCircle(Offset(200, 200), 60, paint1);
-    canvas.drawCircle(Offset(200, 200), 40, paint2);
-    canvas.drawCircle(Offset(200, 200), 20, paint1);
+    canvas.drawCircle(const Offset(200, 200), 60, paint1);
+    canvas.drawCircle(const Offset(200, 200), 40, paint2);
+    canvas.drawCircle(const Offset(200, 200), 20, paint1);
 
 
   }
