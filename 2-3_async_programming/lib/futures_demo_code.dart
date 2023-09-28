@@ -23,9 +23,9 @@ double longTask() {
 
 void futureExample(){
   print("start of futureExample()");
-  print("calling futrerLongTask()");
+  print("calling futureLongTask()");
   Future<double> randomDoubleVal = futureLongTask();
-  randomDoubleVal.then((value) =>  print("futerLongTask returned: " + value.toString()));
+  randomDoubleVal.then((value) =>  print("futereLongTask returned: " + value.toString()));
   print("end of futureExample() method");
 
 }

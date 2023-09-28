@@ -5,7 +5,7 @@ import 'dart:math';
 Stream<int> _randomNumbersAsyncGenerator() async* {
   final random = Random();
 
-  for(int i = 0; i < 25; ++i){
+  for(int i = 0; i < 5; ++i){
     await Future.delayed(Duration(seconds: 1));
     yield random.nextInt(100);
   }
@@ -55,6 +55,9 @@ class RandomNumberStream{
   Stream<int>  get stream => _controller.stream;
 
   void _stopTimer () {
+
+    print("RandomNumberStream -> _stopTimer");
+
     _timer?.cancel();
     _controller.close();
   }
@@ -68,6 +71,7 @@ class RandomNumberStream{
   }
 
   void _startStream() {
+    print("RandomNumberStream -> _startStream");
     _timer = Timer.periodic(Duration(seconds: 1), _runStream);
     _currentCount = 0;
   }
@@ -94,9 +98,17 @@ void streamControllerExample() async {
     print(random);
   });
 
+  print("streamControllerExample... about to await on delay");
+
   await Future.delayed(Duration(seconds:4));
 
+  print("streamControllerExample... finished delay");
+
+
   subscription.cancel();
+
+  print("streamControllerExample end");
+
 
 
 }
