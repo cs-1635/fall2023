@@ -35,7 +35,7 @@ class Home extends StatelessWidget {
                 textStyle: const TextStyle(fontSize: 20),
               ),
               onPressed: (){
-                Navigator.pushNamed(context, feedRoute, arguments: 'arguments/data from home');
+                Navigator.pushNamed(context, feedRoute, arguments: '-new/data from home');
               },
               child: const Text('Click to go somewhere'),
             )

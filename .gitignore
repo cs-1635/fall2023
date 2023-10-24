@@ -1,1 +1,5 @@
 .DS_Store
+**/.dart_tool/
+3-3_composition/.dart_tool/
+/3-1_mvp_mvvm/.DS_Store
+/3-1_mvp_mvvm/mvvm-flutter/.dart_tool
